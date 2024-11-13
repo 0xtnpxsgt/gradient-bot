@@ -20,7 +20,7 @@ echo "Running the Docker container with proxies1.txt..."
 docker run -d \
   -e APP_USER="$app_user" \
   -e APP_PASS="$app_pass" \
-  -v "$PWD/proxies1.txt:/app/proxies1.txt" \
+  -v "$PWD/proxies1.txt:/app/proxies.txt" \
   overtrue/gradient-bot
 
 # Step 5: Loop to add more containers with new proxies files if the user wants
@@ -34,16 +34,16 @@ while true; do
     read -p "Enter proxy format for proxies${counter}.txt (e.g., socks5://username:password@proxyhost:port): " proxy
     echo "$proxy" > "proxies${counter}.txt"
 
-    # Run the next Docker container with the new proxies file
+    # Run the next Docker container with the new proxies file mapped to /app/proxies.txt
     echo "Running the Docker container with proxies${counter}.txt..."
     docker run -d \
       -e APP_USER="$app_user" \
       -e APP_PASS="$app_pass" \
-      -v "$PWD/proxies${counter}.txt:/app/proxies${counter}.txt" \
+      -v "$PWD/proxies${counter}.txt:/app/proxies.txt" \
       overtrue/gradient-bot
 
     echo "Docker container with proxies${counter}.txt is now running."
-    
+
     # Increment counter for the next proxy file
     ((counter++))
   else
