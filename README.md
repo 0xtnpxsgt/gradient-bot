@@ -10,7 +10,7 @@
 
 ### Prepare proxy IP
 
-Optional `proxies1.txt`:
+Proxy format `proxies1.txt`:
 
 > socks5://username:password@proxyhost:port
 
