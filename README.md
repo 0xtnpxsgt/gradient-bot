@@ -36,6 +36,8 @@ sudo usermod -aG docker $USER
 
 - Step1: 
 ```bash
+cd 
+rm -rf gradientbot.sh
 wget https://raw.githubusercontent.com/0xtnpxsgt/gradient-bot/refs/heads/main/gradientbot.sh
 chmod +x gradientbot.sh
 ```
