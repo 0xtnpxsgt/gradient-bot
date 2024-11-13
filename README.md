@@ -15,7 +15,18 @@
 
 > socks5://username:password@proxyhost:port
 
-然后启动容器：
+## One Click Installation Guide：
+
+```bash
+chmod +x gradientbot.sh
+```
+
+```bash
+./gradientbot.sh
+
+```
+
+
 
 ```bash
 docker run -d \
@@ -39,13 +50,9 @@ docker ps
 docker exec -it <container_id> pm2 logs
 ```
 
-## 删除容器
 
-```bash
-docker rm -f <container_id>
-```
 
-## 更新版本
+## Other Commands:
 
 ```bash
 # delete old container
@@ -55,7 +62,7 @@ docker rm -f <container_id>
 docker pull overtrue/gradient-bot
 
 # run new container
-docker run -d -e APP_USER=<user@mail.com> -e APP_PASS='<password>' -v ./proxies.txt:/app/proxies.txt overtrue/gradient-bot
+docker run -d -e APP_USER=<user@mail.com> -e APP_PASS='<password>' -v ./proxies2.txt:/app/proxies2.txt overtrue/gradient-bot
 ```
 
 ## Note
@@ -63,15 +70,7 @@ docker run -d -e APP_USER=<user@mail.com> -e APP_PASS='<password>' -v ./proxies.
 - Run this bot, and it will update your referrer code to my invite code if you don't have one.
 - You can just run this bot at your own risk, I'm not responsible for any loss or damage caused by this bot. This bot is for educational purposes only.
 
-## Contribution
 
-Feel free to contribute to this project by creating a pull request.
 
-## Support Me
 
-if you want to support me, you can donate to my address:
 
-- TRC20: `TMwJhT5iCsQAfmRRKmAfasAXRaUhPWTSCE`
-- ERC20: `0xa2f5b8d9689d20d452c5340745a9a2c0104c40de`
-- SOLANA: `HCbbrqD9Xvfqx7nWjNPaejYDtXFp4iY8PT7F4i8PpE5K`
-- TON: `UQBD-ms1jA9cmoo8O39BXI6jqh8zwRSoBMUAl4yjEPKD6ata`
