@@ -26,16 +26,6 @@ chmod +x gradientbot.sh
 ./gradientbot.sh
 
 ```
-- Step3:
-```bash
-docker run -d \
-  -e APP_USER=user@mail.com \
-  -e APP_PASS=password \
-  -v ./proxies1.txt:/app/proxies1.txt \
-  overtrue/gradient-bot
-```
-
-## Note: proxies.txtPlease replace the path with the correct path. If there is no proxy, you can leave it blank, or cdgo to proxies.txtthe directory first and then execute the docker run command.
 
 ## Check Container ID
 
@@ -43,17 +33,47 @@ docker run -d \
 docker ps
 ```
 
+## Check Logs
+
+```bash
+docker logs -f COINTAINERID
+```
+
+
+
 ## Other Commands:
 ```bash
-# delete old container
-docker rm -f <container_id>
 
 # pull new image
 docker pull overtrue/gradient-bot
 
 # run new container
 docker run -d -e APP_USER=<user@mail.com> -e APP_PASS='<password>' -v ./proxies2.txt:/app/proxies2.txt overtrue/gradient-bot
+
+# delete old container
+docker rm -f <container_id>
 ```
+
+## To Add Another Docker 
+
+```bash
+cd gradient-bot
+```
+
+Create new proxies text file 
+
+```bash
+nano proxies2.txt
+```
+
+```bash
+docker run -d \
+  -e APP_USER=user@mail.com \
+  -e APP_PASS=password \
+  -v ./proxies2.txt:/app/proxies2.txt \
+  overtrue/gradient-bot
+```
+
 
 This command will list all containers, find the corresponding container ID (the value corresponding to the "CONTAINER ID" column), and then execute:
 
