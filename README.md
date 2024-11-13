@@ -7,7 +7,7 @@
 
 > 下面不用看
 
-## 使用 Docker 启动
+## Install Docker
 
 ### 准备代理 IP（可选）
 
