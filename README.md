@@ -7,53 +7,43 @@
 
 > 下面不用看
 
-## 使用 Docker 启动
+## Must Install Docker
 
 ### 准备代理 IP（可选）
 
-将代理地址保存到 `proxies.txt` 文件中，格式为：
+Optional `proxies.txt`:
 
 > socks5://username:password@proxyhost:port
 
 ## One Click Installation Guide：
 
+- Step1: 
 ```bash
 chmod +x gradientbot.sh
 ```
-
+- Step2: 
 ```bash
 ./gradientbot.sh
 
 ```
-
-
-
+- Step3:
 ```bash
 docker run -d \
   -e APP_USER=user@mail.com \
   -e APP_PASS=password \
-  -v ./proxies.txt:/app/proxies.txt \
+  -v ./proxies1.txt:/app/proxies1.txt \
   overtrue/gradient-bot
 ```
 
-注意：`proxies.txt` 路径请替换为正确的路径，如果没有代理，可以留空，或者先 `cd` 到 `proxies.txt` 所在目录再执行 docker run 命令。
+## Note: proxies.txtPlease replace the path with the correct path. If there is no proxy, you can leave it blank, or cdgo to proxies.txtthe directory first and then execute the docker run command.
 
-## 查看运行日志
+## Check Container ID
 
 ```bash
 docker ps
 ```
 
-此命令会列出所有容器，找到对应的容器 ID（"CONTAINER ID" 列对应的值），然后执行：
-
-```bash
-docker exec -it <container_id> pm2 logs
-```
-
-
-
 ## Other Commands:
-
 ```bash
 # delete old container
 docker rm -f <container_id>
@@ -63,6 +53,12 @@ docker pull overtrue/gradient-bot
 
 # run new container
 docker run -d -e APP_USER=<user@mail.com> -e APP_PASS='<password>' -v ./proxies2.txt:/app/proxies2.txt overtrue/gradient-bot
+```
+
+This command will list all containers, find the corresponding container ID (the value corresponding to the "CONTAINER ID" column), and then execute:
+
+```bash
+docker exec -it <container_id> pm2 logs
 ```
 
 ## Note
