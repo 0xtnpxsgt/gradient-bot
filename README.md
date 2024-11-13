@@ -65,33 +65,9 @@ docker logs -f COINTAINERID
 # pull new image
 docker pull overtrue/gradient-bot
 
-# run new container
-docker run -d -e APP_USER=<user@mail.com> -e APP_PASS='<password>' -v ./proxies2.txt:/app/proxies2.txt overtrue/gradient-bot
-
 # delete old container
 docker rm -f <container_id>
 ```
-
-## To Add Another Docker 
-
-```bash
-cd gradient-bot
-```
-
-Create new proxies text file 
-
-```bash
-nano proxies2.txt
-```
-
-```bash
-docker run -d \
-  -e APP_USER=user@mail.com \
-  -e APP_PASS=password \
-  -v ./proxies2.txt:/app/proxies2.txt \
-  overtrue/gradient-bot
-```
-
 
 This command will list all containers, find the corresponding container ID (the value corresponding to the "CONTAINER ID" column), and then execute:
 
