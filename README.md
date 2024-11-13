@@ -18,6 +18,7 @@ Proxy format `proxies1.txt`:
 
 - Step1: 
 ```bash
+wget https://raw.githubusercontent.com/0xtnpxsgt/gradient-bot/refs/heads/main/gradientbot.sh
 chmod +x gradientbot.sh
 ```
 - Step2: 
