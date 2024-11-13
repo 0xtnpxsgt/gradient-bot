@@ -7,13 +7,6 @@
 
 > Must Install Docker
 
-
-### Prepare proxy IP
-
-Proxy format `proxies1.txt`:
-
-> socks5://username:password@proxyhost:port
-
 ## One Click Installation Guide：
 
 - Step1: 
