@@ -5,10 +5,10 @@ echo "Cloning the repository..."
 git clone https://github.com/0xtnpxsgt/gradient-bot.git
 cd gradient-bot || { echo "Failed to enter the directory"; exit 1; }
 
-# Step 2: Set up the proxy file
+# Step 2: Set up the proxies file
 echo "Setting up the proxies file (proxies.txt)..."
-read -p "Enter proxy format for proxies.txt (e.g., socks5://username:password@proxyhost:port): " proxy
-echo "$proxy" > proxies.txt
+echo "Enter multiple proxies, one per line. When done, press Ctrl+D:"
+cat > proxies.txt
 
 # Step 3: Prompt for Docker environment variables
 read -p "Enter your APP_USER (email): " app_user
