@@ -46,7 +46,7 @@ chmod +x gradientbot.sh
 ./gradientbot.sh
 
 ```
-3. Proxy format, like this:
+- Proxy format, like this:
 
    ```text
    http://username:password@hostname:port
